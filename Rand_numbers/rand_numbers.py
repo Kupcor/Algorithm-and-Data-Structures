@@ -22,3 +22,12 @@ def rand_number(size, boundary):
         i+=1
 
     return rand_list
+
+#Funtion 2 - list of numbers
+def list_of_numbers(reach):
+    list = []
+
+    for item in range(1,reach+1):
+        list.append(item)
+
+    return list
