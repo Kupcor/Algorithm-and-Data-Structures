@@ -3,6 +3,7 @@
 
 #========= Directories and files ========#
 import math
+from Soritng_algorithms import sorting_algorithms
 
 from Rand_numbers import rand_numbers
 
@@ -15,7 +16,8 @@ from Rand_numbers import rand_numbers
 
 def linear_search(wanted_number,_list = []):
 
-    list = _list
+    list = sorting_algorithms.bubble_sort(_list)
+    print(list)
 
     attemps = 0
 
@@ -36,8 +38,8 @@ def linear_search(wanted_number,_list = []):
 #4. If wanted number is greater than current value than define new range of searching: (first value = current value, end of range>
 #5. If wanted number is lower than current values than define new range of searching: (first value, end of range = current value
 #5. Go to step 1
-def binary_search(wanted_number, reach):
-    list = rand_numbers.list_of_numbers(reach)
+def binary_search(wanted_number, _list = []):
+    list = _list
     attemps = 0
 
     max_range = len(list)

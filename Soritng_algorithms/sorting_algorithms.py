@@ -5,8 +5,8 @@
 from Rand_numbers import rand_numbers
 
 #Function 1 - bubble sort
-def bubble_sort(size,boundary):
-    list = rand_numbers.rand_number(size,boundary)
+def bubble_sort(_list = []):
+    list = _list
 
     i = 0
     j = 0
