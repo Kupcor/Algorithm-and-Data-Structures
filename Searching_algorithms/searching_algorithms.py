@@ -13,12 +13,13 @@ from Rand_numbers import rand_numbers
 #4. If this is not the wanted number then go to the next value
 #5. Go to step 2
 
-def linear_search(wanted_number,reach):
+def linear_search(wanted_number,_list = []):
 
-    list = rand_numbers.list_of_numbers(reach)
+    list = _list
+
     attemps = 0
 
-    for item in range(1, len(list)+1):
+    for item in list:
         attemps += 1
         if item == wanted_number:
             print("Linear search: wanted number is found. This is: ", wanted_number)
@@ -46,7 +47,6 @@ def binary_search(wanted_number, reach):
     while attemps != len(list):
         attemps += 1
         #current_value = math.floor(current_value)
-        print(current_value)
 
         if current_value == wanted_number:
             print("Binary search: wanted number is found. This is: ", wanted_number)
