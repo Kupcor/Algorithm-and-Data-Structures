@@ -14,21 +14,25 @@ from Rand_numbers import rand_numbers
 #4. If this is not the wanted number then go to the next value
 #5. Go to step 2
 
+#Function will return the index position of the wanted number/target if found, else return None
+
 def linear_search(wanted_number,_list = []):
 
     list = sorting_algorithms.bubble_sort(_list)
-    print(list)
 
+    #Variable 'attemps' will inform us how many attemps were made to find wanted number
     attemps = 0
 
-    for item in list:
+    for i in range(0, len(list)):
         attemps += 1
-        if item == wanted_number:
+        if list[i] == wanted_number:
             print("Linear search: wanted number is found. This is: ", wanted_number)
             print("Amount of attemps: ", attemps)
-            return attemps
+            print("Position of wanted number is: ", attemps - 1)
+            return attemps - 1
 
     print("Wanted number is not found. It is probably out of range.")
+    return None
 
 #Function 2 - binary search
 #Input precondiction - values have to be sorted

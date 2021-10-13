@@ -20,13 +20,15 @@ def bubble_sort(_list = []):
         j = 0
         i += 1
 
-    print()
+    return list
 
-    i = 0
-    for item in list:
-        if i % 10 != 0:
-            print(item, end=" ")
-        else:
-            print()
-            print(item, end=" ")
-        i += 1
+    #print sorted list: 10 numbers in row
+    #print()
+    #i = 0
+    #for item in list:
+    #    if i % 10 != 0:
+    #        print(item, end=" ")
+    #    else:
+    #        print()
+    #        print(item, end=" ")
+    #    i += 1

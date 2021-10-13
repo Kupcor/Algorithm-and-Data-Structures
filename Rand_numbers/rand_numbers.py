@@ -9,7 +9,7 @@ import random
 def rand_number(size, boundary):
     rand_list = []
 
-    for item in range(0,size):
+    for item in range(1, size):
         rand_list.append(random.randint(1,boundary))
 
     i = 0
@@ -27,17 +27,15 @@ def rand_number(size, boundary):
 def list_of_numbers(reach):
     list = []
 
-    for item in range(1,reach+1):
+    for item in range(1, reach):
         list.append(item)
 
     return list
 
 #Function 3 - list of random, unique numbers
+#TODO add some restriction
 def unique_rand_numbers(size,reach):
     list = []
-
-    if size > reach:
-        return "Error!"
 
     while len(list) != size:
         rand_number = random.randint(1, reach)
