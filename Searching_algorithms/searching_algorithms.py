@@ -20,16 +20,12 @@ def linear_search(wanted_number,_list = []):
 
     list = sorting_algorithms.bubble_sort(_list)
 
-    #Variable 'attemps' will inform us how many attemps were made to find wanted number
-    attemps = 0
-
     for i in range(0, len(list)):
-        attemps += 1
         if list[i] == wanted_number:
             print("Linear search: wanted number is found. This is: ", wanted_number)
-            print("Amount of attemps: ", attemps)
-            print("Position of wanted number is: ", attemps - 1)
-            return attemps - 1
+            print("Amount of attemps: ", i+1)
+            print("Position of wanted number is: ", i)
+            return i
 
     print("Wanted number is not found. It is probably out of range.")
     return None
@@ -42,22 +38,24 @@ def linear_search(wanted_number,_list = []):
 #4. If wanted number is greater than current value than define new range of searching: (first value = current value, end of range>
 #5. If wanted number is lower than current values than define new range of searching: (first value, end of range = current value
 #5. Go to step 1
+#TODO correct algorithm. It doesn't return properly index.
+
 def binary_search(wanted_number, _list = []):
     list = _list
     attemps = 0
 
     max_range = len(list)
-    min_range = 1
+    min_range = 0 #change to 0
     current_value = int((max_range + min_range) / 2)
 
     while attemps != len(list):
         attemps += 1
-        #current_value = math.floor(current_value)
+        print(current_value)
 
         if current_value == wanted_number:
             print("Binary search: wanted number is found. This is: ", wanted_number)
             print("Amount of attemps: ", attemps)
-            return attemps
+            return current_value - 1 #position of the wanted item
         else:
             if current_value > wanted_number:
                 max_range = current_value
@@ -69,5 +67,5 @@ def binary_search(wanted_number, _list = []):
                 current_value = math.ceil(current_value)
 
     print("Wanted number is not found. It is probably out of range.")
-
+    return None
 
