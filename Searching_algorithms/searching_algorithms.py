@@ -1,71 +1,65 @@
-#========== Info ========#
-#This file contain some searching funtions
+# ========== Info ========#
+# This file contain some searching functions
 
-#========= Directories and files ========#
+# ========= Directories and files ========#
 import math
 from Soritng_algorithms import sorting_algorithms
 
-from Rand_numbers import rand_numbers
 
-#Function 1 - linear search
-#1. Start at the begining of the list/range
-#2. Compare the current number/values with the value you are looking for
-#3. If this is the wanted number then stop searching
-#4. If this is not the wanted number then go to the next value
-#5. Go to step 2
+# Function 1 - linear search
+# 1. Start at the beginning of the list/range
+# 2. Compare the current number/values with the value you are looking for
+# 3. If this is the wanted number then stop searching
+# 4. If this is not the wanted number then go to the next value
+# 5. Go to step 2
 
-#Function will return the index position of the wanted number/target if found, else return None
+# Function will return the index position of the wanted number/target if found, else return None
 
-def linear_search(wanted_number,_list = []):
+def linear_search(wanted_number, _list=[]):
+    input_list = sorting_algorithms.bubble_sort(_list)
 
-    list = sorting_algorithms.bubble_sort(_list)
-
-    for i in range(0, len(list)):
-        if list[i] == wanted_number:
-            print("Linear search: wanted number is found. This is: ", wanted_number)
-            print("Amount of attemps: ", i+1)
-            print("Position of wanted number is: ", i)
+    for i in range(0, len(input_list)):
+        if input_list[i] == wanted_number:
             return i
 
     print("Wanted number is not found. It is probably out of range.")
     return None
 
-#Function 2 - binary search
-#Input precondiction - values have to be sorted
-#1. Go to the middle of the list/range
-#2. Compare the current number/values with the value you are looking for
-#3. If this is the wanted number then stop searching
-#4. If wanted number is greater than current value than define new range of searching: (first value = current value, end of range>
-#5. If wanted number is lower than current values than define new range of searching: (first value, end of range = current value
-#5. Go to step 1
-#TODO correct algorithm. It doesn't return properly index.
 
-def binary_search(wanted_number, _list = []):
-    list = _list
-    attemps = 0
+# Function 2 - binary search
+# Input precondition - values have to be sorted
+# 1. Go to the middle of the list/range
+# 2. Compare the current number/values with the value you are looking for
+# 3. If this is the wanted number then stop searching
+# 4. If wanted number is greater than current value than define new range of searching:
+#       (first value = current value, end of range>
+# 5. If wanted number is lower than current values than define new range of searching:
+#       (first value, end of range = current value
+# 6. Go to step 1
 
-    max_range = len(list)
-    min_range = 0 #change to 0
-    current_value = int((max_range + min_range) / 2)
+# Function will return the index position of the wanted number/target if found, else return None
 
-    while attemps != len(list):
-        attemps += 1
-        print(current_value)
+def binary_search(wanted_number, _list=[]):
+    input_list = _list
 
-        if current_value == wanted_number:
-            print("Binary search: wanted number is found. This is: ", wanted_number)
-            print("Amount of attemps: ", attemps)
-            return current_value - 1 #position of the wanted item
+    max_range = len(input_list) - 1  # last element of the input_list; position of last element of the input_list
+    min_range = 0  # first element of the input_list; position of the first element of the input_list
+    current_position = int((max_range - min_range) / 2)  # current position of the compared value
+
+    while current_position != max_range or current_position != min_range:
+
+        if input_list[current_position] == wanted_number:
+            return current_position  # position of the wanted item
+
         else:
-            if current_value > wanted_number:
-                max_range = current_value
-                current_value = (max_range + min_range) / 2
-                current_value = math.floor(current_value)
-            else:
-                min_range = current_value
-                current_value = (max_range + min_range) / 2
-                current_value = math.ceil(current_value)
+            if current_position >= wanted_number:
+                max_range = current_position
+                current_position = (max_range + min_range) / 2
+                current_position = math.floor(current_position)
+            elif current_position <= wanted_number:
+                min_range = current_position
+                current_position = (max_range + min_range) / 2
+                current_position = math.ceil(current_position)
 
     print("Wanted number is not found. It is probably out of range.")
     return None
-

@@ -1,46 +1,50 @@
-#========== Info ========#
-#This file contain mainly function to creating list of random numbers to sort
+# ========== Info ========#
+# This file contain mainly function to creating list of random numbers to sort
 
-#========= Directories ==========#
+# ========= Directories ==========#
 import random
 
 
-#Funtion 1 - random numbers generating
+# Function 1 - random numbers generating
+# Function will return a list of random numbers. Its size, and boundaries will be provide by user.
 def rand_number(size, boundary):
     rand_list = []
 
     for item in range(1, size):
-        rand_list.append(random.randint(1,boundary))
+        rand_list.append(random.randint(1, boundary))
 
     i = 0
     for item in rand_list:
         if i % 10 != 0:
-            print(item,end=" ")
+            print(item, end=" ")
         else:
             print()
-            print(item, end = " ")
-        i+=1
+            print(item, end=" ")
+        i += 1
 
     return rand_list
 
-#Funtion 2 - list of numbers
+
+# Function 2 - list of numbers
+# Function will return list of sorted numbers. Its size will be provide by user.
 def list_of_numbers(reach):
-    list = []
+    input_list = []
 
     for item in range(1, reach):
-        list.append(item)
+        input_list.append(item)
 
-    return list
+    return input_list
 
-#Function 3 - list of random, unique numbers
-#TODO add some restriction
-def unique_rand_numbers(size,reach):
-    list = []
 
-    while len(list) != size:
-        rand_number = random.randint(1, reach)
+# Function 3 - list of random, unique numbers
+# TODO add some restriction
+def unique_rand_numbers(size, reach):
+    input_list = []
 
-        if rand_number not in list:
-            list.append(rand_number)
+    while len(input_list) != size:
+        generated_number = random.randint(1, reach)
 
-    return list
+        if generated_number not in input_list:
+            input_list.append(generated_number)
+
+    return input_list
