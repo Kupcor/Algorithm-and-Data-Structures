@@ -30,7 +30,7 @@ def rand_number(size, boundary):
 def list_of_numbers(reach):
     input_list = []
 
-    for item in range(1, reach):
+    for item in range(0, reach):
         input_list.append(item)
 
     return input_list
