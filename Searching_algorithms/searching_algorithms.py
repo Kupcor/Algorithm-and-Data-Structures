@@ -2,7 +2,6 @@
 # This file contain some searching functions
 
 # ========= Directories and files ========#
-import math
 from Soritng_algorithms import sorting_algorithms
 
 
@@ -44,9 +43,8 @@ def binary_search(wanted_number, _list=[]):
 
     max_range = len(input_list) - 1  # last element of the input_list; position of last element of the input_list
     min_range = 0  # first element of the input_list; position of the first element of the input_list
-    attempt = 0  # amount of attempt
 
-    # While loop has growing operation run time.
+    # If user imput empty list
     while min_range <= max_range:
 
         current_position = (max_range + min_range) // 2  # current position of the compared value
@@ -62,3 +60,29 @@ def binary_search(wanted_number, _list=[]):
 
     print("Wanted number is not found. It is probably out of range.")
     return None
+
+
+# Function 3 - recursive binary search
+# Input precondition - values have to be sorted
+# Function will be perform binary search by using recursion
+
+# Function will return the True value if wanted_number exist in the list, else it will return False
+def recursive_binary_search(wanted_number, _list=[]):
+
+    # if list doesn't exist then function will return False value
+    if len(_list) == 0:
+        return False
+    else:
+        current_value = len(_list) // 2
+
+        # Recursion implementation
+        if _list[current_value] == wanted_number:
+            return True
+        else:
+            if _list[current_value] < wanted_number:
+                # Returning new list, from midpoint to end
+                return recursive_binary_search(wanted_number, _list[current_value + 1:])
+            else:
+                return recursive_binary_search(wanted_number, _list[:current_value - 1])
+
+

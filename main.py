@@ -9,6 +9,8 @@ print(x)
 
 # result = searching_algorithms.linear_search(100, x)
 # verification_function.verification_search(result)
-result = searching_algorithms.binary_search(0, x)
+#result = searching_algorithms.binary_search(0, x)
+#verification_function.verification_search(result)
+result = searching_algorithms.recursive_binary_search(500, x)
 verification_function.verification_search(result)
 
