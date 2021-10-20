@@ -13,15 +13,6 @@ def rand_number(size, boundary):
     for item in range(1, size):
         rand_list.append(random.randint(1, boundary))
 
-    i = 0
-    for item in rand_list:
-        if i % 10 != 0:
-            print(item, end=" ")
-        else:
-            print()
-            print(item, end=" ")
-        i += 1
-
     return rand_list
 
 
