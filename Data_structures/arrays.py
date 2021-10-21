@@ -18,5 +18,21 @@ for n in new_array:
 
     break
 
+# Insert values to array
+# By insert -> this function insert any value to any index and shift indexes of the rest values
+new_array.insert(0, 100)
+print(new_array)
+
+# By append -> this function insert any value to the end of the array
+new_array.append(31)
+print(new_array)
+
+# By add one list to another
+new_array.extend([54, "pen", 1])
+print(new_array)
+
+# Deleting values is as reversed inserting. This function delete first inserted value in the list
+new_array.remove(1)
+print(new_array)
 
 

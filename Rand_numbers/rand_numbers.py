@@ -28,7 +28,6 @@ def list_of_numbers(reach):
 
 
 # Function 3 - list of random, unique numbers
-# TODO add some restriction
 def unique_rand_numbers(size, reach):
     input_list = []
 
