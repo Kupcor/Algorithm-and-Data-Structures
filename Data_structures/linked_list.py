@@ -167,12 +167,15 @@ class LinkedList:
         new_node.next_node = self.head
         self.head = new_node
 
+    # method to add multiple values to linked list, which are stored in array/list ect.
+    def add_list(self, list_of_values):
+
+        for i in range(0, len(list_of_values)):
+            self.add(list_of_values[i])
+
 
 l = LinkedList()
-list_of_values = rand_numbers.rand_number(10, 10)
-for i in range(0, len(list_of_values)):
-    l.add(list_of_values[i])
-
+l.add_list(list_of_values=rand_numbers.rand_number(10, 10))
 print(l)
 l.insert(100, 5)
 print(l)

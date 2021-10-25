@@ -14,6 +14,13 @@ def verification_search(index):
 
 
 # Function 2 - verification searching algorithms, recursive version
-
 def verification_search(result):
     print("Wanted number found: ", result)
+
+
+# Function 3 - verification of sorting algorithm
+def verify_sorted(list):
+    if len(list) <= 1:
+        return True
+
+    return list[0] <= list[1] and verify_sorted(list[1:])
