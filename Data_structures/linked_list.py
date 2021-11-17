@@ -167,25 +167,23 @@ class LinkedList:
         new_node.next_node = self.head
         self.head = new_node
 
+    # return a node at a given index
+    def node_at_index(self, index):
+        if index == 0:
+            return self.head
+        else:
+            current = self.head
+            position = 0
+
+            # calculate an index of current Node
+            while position < index:
+                current = current.next_node
+                position += 1
+            return current
+
     # method to add multiple values to linked list, which are stored in array/list ect.
     def add_list(self, list_of_values):
 
         for i in range(0, len(list_of_values)):
             self.add(list_of_values[i])
 
-
-l = LinkedList()
-l.add_list(list_of_values=rand_numbers.rand_number(10, 10))
-print(l)
-l.insert(100, 5)
-print(l)
-l.remove(5)
-print(l)
-l.delete(2)
-print(l)
-l.delete(4)
-result = l.insert(100, 20)
-print(result)
-result = l.size()
-print(result)
-print(l)

@@ -3,6 +3,7 @@
 
 # ========= Directories and files ========#
 from Soritng_algorithms import additional_functions
+from Data_structures import linked_list
 
 # Function 1 - bubble sort
 # Function will return sorted list of element.
@@ -31,6 +32,8 @@ Sorts a list in ascending order -> returns a new sorted list
 2.Conques: Recursively sort the sublists in previous step
 3.Combine: merge the sorted sublist created in previous step
 """
+
+
 def merge_sort(list_of_values):
     if len(list_of_values) <= 1:
         return list_of_values
@@ -44,3 +47,33 @@ def merge_sort(list_of_values):
     right = merge_sort(right_half)
 
     return additional_functions.merge(left, right)
+
+
+"""
+    Function 3 - linked list merge sort
+"""
+
+
+def linked_list_merge_sort(linked_list):
+    """
+    Function Sorts a linked list in ascending order
+    Recursively divide the linked list into sublists containing single node
+    Repeatedly merge the sublist to produce sortd sublists until one remains
+
+    Return a sorted linked list
+    :param linked_list:
+    :return:
+    """
+    # If linked list has only one element than it will be returned right away
+    # Size function of linked list is already defined in Linked_List file
+    if linked_list.size() == 1:
+        return linked_list
+    elif linked_list.head is None:
+        return linked_list
+
+    left_half, right_half = additional_functions.split_linked_list(linked_list)  # Split work properly
+    left = linked_list_merge_sort(left_half)
+    right = linked_list_merge_sort(right_half)
+
+    # Final merge
+    return additional_functions.merge_linked_list(left, right)
