@@ -139,7 +139,7 @@ class LinkedList:
 
     # method to check if LinkedList is empty or not
     def is_empty(self):
-        return self.head == None
+        return self.head is None
 
     # method to check size of the linked list
     # to check size we have to go by each Node until reach Tail Node
@@ -186,4 +186,5 @@ class LinkedList:
 
         for i in range(0, len(list_of_values)):
             self.add(list_of_values[i])
+
 

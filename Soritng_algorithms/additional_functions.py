@@ -4,12 +4,13 @@
 # ========= Directories and files ========#
 from Data_structures.linked_list import LinkedList
 
+
 # Function 1 - split function
-# Function will divide list into two sublists
+# Function will divide list into two sublist
 def split(list_of_values):
     """
-    Divide the unsorted list at midpoint into sublists
-    Returns two sublists - left and right
+    Divide the unsorted list at midpoint into sublist
+    Returns two sublist - left and right
     """
     mid = len(list_of_values) // 2
     left = list_of_values[:mid]  # stopping value is not included
@@ -20,7 +21,7 @@ def split(list_of_values):
 
 
 # Function 2 - merge function.
-# This function will sort and merge two sublists for mergesort
+# This function will sort and merge two sublist for mergesort
 def merge(left, right):
     """
     Merges two lists (arrays), sorting them in the process
@@ -52,15 +53,16 @@ def merge(left, right):
 
     return list_of_values
 
+
 # Function 3 - split function
-# Function will divide list into two sublists
+# Function will divide list into two sublist
 def split_linked_list(linked_list):
     """
-    Divide the unsorted list at midpoint into sublists
-    Returns two sublists - left and right
+    Divide the unsorted list at midpoint into sublist
+    Returns two sublist - left and right
     """
 
-    if linked_list == None or linked_list.head == None:
+    if linked_list is None or linked_list.head is None:
         left_half = linked_list
         right_half = None
 
@@ -79,14 +81,18 @@ def split_linked_list(linked_list):
         # we are returning two values in this function
         return left_half, right_half
 
+
 # Function 4 - merge function for linked list.
-# This function will sort and merge two sublists for mergesort
+# This function will sort and merge two sublist for mergesort
 def merge_linked_list(left, right):
     """
     Merges two linked lists, sorting them in the process
     :param left:
     :param right:
     :return: list_of_values
+
+
+    Run time: O(nk log n)
     """
 
     # Create a new linked list that contains nodes from
@@ -140,4 +146,3 @@ def merge_linked_list(left, right):
     merged.head = head
 
     return merged
-
