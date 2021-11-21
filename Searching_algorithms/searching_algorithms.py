@@ -14,14 +14,14 @@ from Soritng_algorithms import sorting_algorithms
 
 # Function will return the index position of the wanted number/target if found, else return None
 
-def linear_search(wanted_number, _list=[]):
-    input_list = sorting_algorithms.bubble_sort(_list)
+def linear_search(wanted_value, _list=[]):
+    input_list = _list
 
-    for i in range(0, len(input_list)):
-        if input_list[i] == wanted_number:
-            return i
+    for index in range(0, len(input_list)):
+        if input_list[index] == wanted_value:
+            return index
 
-    print("Wanted number is not found. It is probably out of range.")
+    print("Wanted value is not found. It is probably out of range.")
     return None
 
 
@@ -38,7 +38,7 @@ def linear_search(wanted_number, _list=[]):
 
 # Function will return the index position of the wanted number/target if found, else return None
 
-def binary_search(wanted_number, _list=[]):
+def binary_search(wanted_value, _list=[]):
     input_list = _list
 
     max_range = len(input_list) - 1  # last element of the input_list; position of last element of the input_list
@@ -49,13 +49,13 @@ def binary_search(wanted_number, _list=[]):
 
         current_position = (max_range + min_range) // 2  # current position of the compared value
 
-        if input_list[current_position] == wanted_number:
+        if input_list[current_position] == wanted_value:
             return current_position  # position of the wanted item
 
         else:
-            if current_position >= wanted_number:
+            if input_list[current_position] >= wanted_value:
                 max_range = current_position - 1
-            elif current_position <= wanted_number:
+            elif input_list[current_position] <= wanted_value:
                 min_range = current_position + 1
 
     print("Wanted number is not found. It is probably out of range.")

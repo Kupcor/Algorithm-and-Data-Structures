@@ -8,7 +8,10 @@ from Data_bases import writing_data_base
 from Data_structures.linked_list import LinkedList
 from Time import timing
 
-
-numbers = rand_numbers.unique_rand_numbers(10, 30)
-sorted_list = sorting_algorithms.quick_sort(numbers)
+# name database:
+names = ["Piotr", "Anna", "Marek", "Paweł", "Alfreda", "Amelia", "Aneta", "Fabian", "Ida", "Halina", "Kinga", "Zygmunt", "Henryk", "Angela", "Aleksandra", "Ola", "Bartosz", "Michał"]
+print(names)
+sorted_list = sorting_algorithms.quick_sort(names)
 print(sorted_list)
+searching_name = searching_algorithms.linear_search("Ida", sorted_list)
+print(searching_name)

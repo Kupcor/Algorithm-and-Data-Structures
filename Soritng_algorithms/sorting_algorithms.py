@@ -6,11 +6,13 @@ Function 1 - bubble sort
 Function 2 - merger sort
 Function 3 - merge sort for Linked List
 Function 4 - bogo sort
-
+Function 5 - selection sort
+Function 6 - quick sort
 """
 
 # ========= Directories and files ========#
 import random
+import sys
 
 from Soritng_algorithms import additional_functions
 from Data_structures import linked_list
@@ -25,7 +27,7 @@ def bubble_sort(_list=[]):
     j = 0
     while i != (len(input_list) - 1):
         while j != (len(input_list) - 1):
-            if int(input_list[j]) > int(input_list[j + 1]):
+            if input_list[j] > input_list[j + 1]:
                 help_var = input_list[j]
                 input_list[j] = input_list[j + 1]
                 input_list[j + 1] = help_var
@@ -38,10 +40,12 @@ def bubble_sort(_list=[]):
 
 # Sorting algorithm 2 - Merge Sort
 """
-Sorts a list in ascending order -> returns a new sorted list
-1.Devide: find a the midpoint pf the list and divide into sublist
-2.Conques: Recursively sort the sublist in previous step
-3.Combine: merge the sorted sublist created in previous step
+    Sorts a list in ascending order -> returns a new sorted list
+    1.Devide: find a the midpoint pf the list and divide into sublist
+    2.Conques: Recursively sort the sublist in previous step
+    3.Combine: merge the sorted sublist created in previous step
+    
+    Efficiency: n log(n)
 """
 
 
@@ -117,6 +121,7 @@ def bogo_sort(list_of_values):
     We are creating one empty list/array for sorted numbers.
     Then we moving step by step the smallest number from unsorted array/list to sorted array list.
     Function will return sorted list.
+    Efficiency: O(n^2)
 """
 
 
@@ -143,11 +148,15 @@ def selection_sort(list_of_values):
     First sublist contains elements that are smaller than a pivot, second contains numbers greater than a pivot.
     Base condition of the function: size of array is equal or less than 1.
     And that all. This is awesome! 
+    For this case: first element of the list is pivot.
+    Efficiency:
+        worst case: O(n^2)
+        best case: O(n log(n))
 """
 
 
 def quick_sort(list_of_values):
-
+    sys.setrecursionlimit(15000)  # increase a recursion depth limit
     if len(list_of_values) <= 1:
         return list_of_values
 
