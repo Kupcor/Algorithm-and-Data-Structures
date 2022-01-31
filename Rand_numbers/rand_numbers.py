@@ -11,7 +11,7 @@ def rand_number(size, boundary):
     rand_list = []
 
     for item in range(0, size):
-        rand_list.append(random.randint(1, boundary))
+        rand_list.append(random.randint(0, boundary-1))
 
     return rand_list
 
