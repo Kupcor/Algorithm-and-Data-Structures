@@ -10,7 +10,7 @@ import random
 def rand_number(size, boundary):
     rand_list = []
 
-    for item in range(1, size):
+    for item in range(0, size):
         rand_list.append(random.randint(1, boundary))
 
     return rand_list
